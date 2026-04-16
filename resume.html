@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>呂禮君 - AI 應用系統工程師</title>
+<style>
+  @page { margin: 0; size: A4; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Microsoft JhengHei', 'Segoe UI', sans-serif;
+    font-size: 9.5pt;
+    line-height: 1.45;
+    color: #1a1a1a;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    width: 210mm;
+    height: 297mm;
+    padding: 24pt 32pt 20pt 32pt;
+    position: relative;
+  }
+
+  .header { text-align: center; margin-bottom: 8pt; }
+  .name { font-size: 20pt; font-weight: 700; letter-spacing: 1pt; margin-bottom: 2pt; }
+  .title { font-size: 10pt; color: #1d4ed8; margin-bottom: 3pt; }
+  .contact { font-size: 8.5pt; color: #555; }
+  .contact a { color: #555; text-decoration: none; }
+
+  .section { margin-bottom: 10pt; }
+  .section-title {
+    font-size: 10pt;
+    font-weight: 700;
+    color: #1a1a1a;
+    border-bottom: 1pt solid #1d4ed8;
+    padding-bottom: 2pt;
+    margin-bottom: 5pt;
+  }
+
+  .summary { font-size: 9.5pt; color: #333; line-height: 1.55; }
+
+  .skills-table { width: 100%; font-size: 9pt; margin-top: 3pt; }
+  .skills-table td { padding: 2pt 0; vertical-align: top; }
+  .skill-cat { font-weight: 700; color: #1a1a1a; width: 72pt; }
+  .skill-val { color: #333; }
+  .skill-match { color: #1d4ed8; font-weight: 600; }
+
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1pt;
+  }
+  .exp-role { font-size: 10pt; font-weight: 700; color: #1a1a1a; }
+  .exp-company { font-weight: 700; color: #1d4ed8; }
+  .exp-meta { font-size: 8.5pt; color: #666; white-space: nowrap; }
+  .exp-block { margin-bottom: 8pt; }
+
+  .proj-title { font-size: 9.5pt; font-weight: 700; margin-top: 4pt; margin-bottom: 1pt; }
+  .tech-tag { font-size: 8pt; color: #1d4ed8; margin-bottom: 2pt; }
+
+  ul { padding-left: 12pt; margin-top: 1pt; }
+  li { font-size: 9pt; color: #333; margin-bottom: 2pt; line-height: 1.45; }
+  li strong { color: #1a1a1a; }
+
+  .exp-divider { border: none; border-top: 0.5pt solid #e5e7eb; margin: 6pt 0; }
+
+  .earlier-line {
+    font-size: 9pt;
+    color: #444;
+    padding: 2pt 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  .earlier-role { font-weight: 600; }
+
+  .edu-line { font-size: 9.5pt; }
+  .edu-line strong { color: #1a1a1a; }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <div class="header">
+    <div class="name">呂禮君 LAMONT LU</div>
+    <div class="title">AI 應用系統工程師</div>
+    <div class="contact">
+      台北市 &nbsp;|&nbsp; 0953-202-9811 &nbsp;|&nbsp; <a href="mailto:lamontlu@gmail.com">lamontlu@gmail.com</a> &nbsp;|&nbsp; <a href="https://linkedin.com/in/lamont-lu-355680132">LinkedIn</a> &nbsp;|&nbsp; 作品集: <a href="https://lamonttw.github.io/lamont-dev-portfolio/">lamonttw.github.io/lamont-dev-portfolio</a> &nbsp;|&nbsp; 產品: <a href="https://airi.airai.tw">airi.airai.tw</a>
+    </div>
+  </div>
+
+  <!-- Skills -->
+  <div class="section">
+    <div class="section-title">技術能力</div>
+    <table class="skills-table">
+      <tr>
+        <td class="skill-cat">前端</td>
+        <td class="skill-val"><span class="skill-match">JavaScript / React / Next.js</span>、TypeScript、Tailwind CSS、RWD</td>
+      </tr>
+      <tr>
+        <td class="skill-cat">後端</td>
+        <td class="skill-val"><span class="skill-match">Node.js</span>、Python、<span class="skill-match">REST API 串接與設計（JSON）</span>、WebSocket</td>
+      </tr>
+      <tr>
+        <td class="skill-cat">資料庫</td>
+        <td class="skill-val"><span class="skill-match">PostgreSQL（Supabase）</span>、MySQL、Firebase</td>
+      </tr>
+      <tr>
+        <td class="skill-cat">AI / LLM</td>
+        <td class="skill-val"><span class="skill-match">OpenAI API / Gemini API</span>、Claude API、<span class="skill-match">RAG 架構</span>、向量嵌入、Prompt Engineering</td>
+      </tr>
+      <tr>
+        <td class="skill-cat">整合 / 部署</td>
+        <td class="skill-val">LINE Messaging API、Google Maps API、Vercel、Git、CI/CD</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Experience -->
+  <div class="section">
+    <div class="section-title">工作經歷</div>
+
+    <div class="exp-block">
+      <div class="exp-header">
+        <div class="exp-role">創辦人 / 全端開發 &nbsp;|&nbsp; <span class="exp-company">AirAI 智流科技</span></div>
+        <div class="exp-meta">2024.08 – 至今 &nbsp;|&nbsp; 台北</div>
+      </div>
+
+      <div class="proj-title">Airi — AI 智慧客服 SaaS 平台（獨立開發，已上線）</div>
+      <div class="tech-tag">Next.js / React / Node.js / Supabase / Claude API / OpenAI Embeddings API / Vercel</div>
+      <ul>
+        <li><strong>RAG 流程設計：</strong>文件上傳後進行解析、切割與向量嵌入（OpenAI Embeddings API），儲存於 Supabase，再透過語意檢索串接 Claude API 生成附來源引用的串流回覆</li>
+        <li><strong>前端：</strong>React 串流打字機介面、對話記憶、手機自適應全螢幕、品牌色自訂、一行 script 嵌入式 Widget</li>
+        <li><strong>後端：</strong>以 Node.js 建置 REST API，處理多租戶資料隔離、訂閱方案計費與對話分析儀表板</li>
+        <li><strong>成果：</strong>產品已上線 airi.airai.tw，於試導入場景中協助客戶將客服初次回應時間縮短 50% 以上</li>
+      </ul>
+
+      <div class="proj-title">ask101.tw — 多模型 AI 對話引擎</div>
+      <div class="tech-tag">Next.js / Node.js / Claude API / OpenAI API / Gemini API</div>
+      <ul>
+        <li>實作多輪對話、動態路由與對話狀態管理，整合 Claude / OpenAI / Gemini API 進行回覆品質與成本比較，選定 Claude 為主要 Provider</li>
+        <li>設計 Prompt 架構（system prompt → context injection → routing）與安全護欄</li>
+      </ul>
+
+      <div class="proj-title">智能派車系統 — LINE Bot + Google Maps API</div>
+      <div class="tech-tag">Next.js / LINE Messaging API / Google Maps Distance Matrix / Firebase</div>
+      <ul>
+        <li>以 LINE Flex Message 自動派單，串接 Google Maps Distance Matrix 建立距離計費邏輯，派車流程時間縮短 95%，計費錯誤率降至 1% 以下</li>
+      </ul>
+    </div>
+
+    <hr class="exp-divider">
+
+    <div class="exp-block">
+      <div class="exp-header">
+        <div class="exp-role">總監，專案交付委員會 &nbsp;|&nbsp; <span class="exp-company">CINNOX</span></div>
+        <div class="exp-meta">2018.08 – 2024.05 · 5 年 10 個月</div>
+      </div>
+      <ul>
+        <li>主導全通路 SaaS 通訊平台工程交付（<strong>WebSocket 即時通訊</strong>、微服務架構、API 契約設計），組織 45→90 人</li>
+        <li>重新設計跨團隊開發與<strong>發版流程</strong>，建立交付節點與協作機制，發版效率提升 250%，客戶問題回應由 2 週縮短至 24 小時內</li>
+      </ul>
+    </div>
+
+    <hr class="exp-divider">
+
+    <div class="earlier-line">
+      <span><span class="earlier-role">軟體工程經理</span> — I.X Security（加密通訊 App，從零到 MVP）</span>
+      <span style="color:#666;">2017 – 2018</span>
+    </div>
+    <div class="earlier-line">
+      <span><span class="earlier-role">研發組長</span> — 獵豹移動（13 人團隊，短影音 App + News Republic，Google Play 印度 #1）</span>
+      <span style="color:#666;">2015 – 2017</span>
+    </div>
+    <div class="earlier-line">
+      <span><span class="earlier-role">專案經理</span> — Tenten（跨平台 Android/iOS/Web 專案交付）</span>
+      <span style="color:#666;">2012 – 2015</span>
+    </div>
+    <div class="earlier-line">
+      <span><span class="earlier-role">資深軟體工程師</span> — HTC（Android 系統層開發 Java/C++）</span>
+      <span style="color:#666;">2008 – 2012</span>
+    </div>
+  </div>
+
+  <!-- Education -->
+  <div class="section">
+    <div class="section-title">學歷</div>
+    <div class="edu-line">
+      <strong>資訊科學碩士</strong> — 國立交通大學 &nbsp;|&nbsp; 2006 – 2008
+    </div>
+  </div>
+
+  <!-- Why me -->
+  <div class="section">
+    <div class="section-title">為什麼適合這個職位</div>
+    <ul>
+      <li><strong>AI 應用實戰：</strong>具 AI SaaS、RAG 流程設計、多家 LLM API 整合與對話系統開發經驗</li>
+      <li><strong>全端交付能力：</strong>涵蓋 React/Next.js 前端、Node.js REST API 與 PostgreSQL（Supabase）資料設計</li>
+      <li><strong>產品與流程經驗：</strong>獨立開發並上線 airi.airai.tw，亦具大型 SaaS 團隊交付與流程設計經驗</li>
+    </ul>
+  </div>
+
+</div>
+
+</body>
+</html>
