@@ -139,17 +139,17 @@
             獨立開發的 AI 客服平台。企業上傳文件，系統自動建立向量知識庫，部署品牌化聊天機器人。一行 script 嵌入網站即可使用。支援多租戶、台幣訂閱計費。
         </div>
 
-        <div class="arch-label">Architecture — RAG Pipeline</div>
+        <div class="arch-label">Architecture — RAG 流程設計</div>
         <div class="arch-flow">
-            文件上傳（PDF/DOCX/TXT/URL）→ 文件解析 & 分段切割 → 向量嵌入（Embedding）<br>
+            文件上傳（PDF/DOCX/TXT/URL）→ 文件解析 & 分段切割 → 向量嵌入（OpenAI Embeddings API）<br>
             → Supabase 儲存 → 使用者提問 → 語意檢索（Semantic Search）<br>
             → Claude API 生成回覆 + 來源引用 → 串流輸出（Streaming SSE）
         </div>
 
         <div class="arch-label">Key Engineering</div>
         <ul class="feature-list">
-            <li><strong>前端：</strong>Next.js + React，串流打字機效果、對話記憶、手機自適應全螢幕、品牌色自訂</li>
-            <li><strong>後端：</strong>Node.js REST API，文件處理管線、向量索引建立（30 秒內完成）、多租戶資料隔離</li>
+            <li><strong>前端：</strong>Next.js + React，串流打字機介面、對話記憶、手機自適應全螢幕、品牌色自訂、一行 script 嵌入式 Widget</li>
+            <li><strong>後端：</strong>以 Node.js 建置 REST API，處理文件管線、向量索引建立（30 秒內完成）、多租戶資料隔離</li>
             <li><strong>資料庫：</strong>Supabase（Auth、Storage、向量搜尋）、Row Level Security</li>
             <li><strong>AI 整合：</strong>Claude API with RAG，95%+ 回覆準確率，每則回覆附來源引用</li>
             <li><strong>後台儀表板：</strong>對話分析、高頻問題偵測、訊息量統計、潛在客戶追蹤</li>
@@ -166,9 +166,9 @@
             <span class="tech-tag">React</span>
             <span class="tech-tag">Node.js</span>
             <span class="tech-tag">TypeScript</span>
-            <span class="tech-tag">Supabase DB</span>
             <span class="tech-tag">Supabase</span>
             <span class="tech-tag">Claude API</span>
+            <span class="tech-tag">OpenAI Embeddings API</span>
             <span class="tech-tag">RAG</span>
             <span class="tech-tag">SSE Streaming</span>
             <span class="tech-tag">Vercel</span>
@@ -183,12 +183,12 @@
             <span class="tag tag-ai">AI 產品</span>
         </div>
         <div class="card-desc">
-            多輪對話式 AI 產品，具備動態回覆路由、對話狀態管理與安全護欄。開發過程中評估三家 LLM Provider，以中文準確度為基準選定 Claude 作為正式環境。
+            多輪對話式 AI 產品，整合 Claude / OpenAI / Gemini API 進行回覆品質與成本比較，選定 Claude 為主要 Provider。具備動態回覆路由、對話狀態管理與安全護欄。
         </div>
 
         <div class="arch-label">Key Engineering</div>
         <ul class="feature-list">
-            <li><strong>多模型評估：</strong>建立 benchmark 流程，測試 Claude / Gemini / OpenAI 在中文語境的準確率、回應速度與成本</li>
+            <li><strong>多模型評估：</strong>整合 Claude / OpenAI / Gemini API，進行中文語境的準確率、回應速度與成本比較</li>
             <li><strong>Prompt 架構：</strong>設計 system prompt → context injection → response routing 的多層架構</li>
             <li><strong>安全護欄：</strong>輸入過濾、輸出驗證、對話狀態追蹤，防止 prompt injection 與偏離主題</li>
             <li><strong>對話狀態管理：</strong>多輪記憶、上下文壓縮、token 使用最佳化</li>
@@ -227,7 +227,7 @@
         </ul>
 
         <div class="impact-row">
-            <div class="impact-item"><div class="num">95%</div><div class="lbl">派車時間提升</div></div>
+            <div class="impact-item"><div class="num">95%</div><div class="lbl">派車流程時間縮短</div></div>
             <div class="impact-item"><div class="num">&lt;1%</div><div class="lbl">計費錯誤率</div></div>
             <div class="impact-item"><div class="num">75%</div><div class="lbl">調度人力節省</div></div>
         </div>
