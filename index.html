@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lamont Lu — Full-Stack & AI Engineer Portfolio</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans TC', sans-serif;
+            color: #1a1a1a; background: #fafafa; line-height: 1.7;
+        }
+        .container { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+
+        /* Hero */
+        header { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; padding: 48px 0 40px; }
+        header h1 { font-size: 30px; font-weight: 700; margin-bottom: 4px; }
+        header .subtitle { font-size: 17px; color: #60a5fa; margin-bottom: 16px; }
+        header .hero-desc { font-size: 15px; color: #cbd5e1; max-width: 660px; line-height: 1.8; margin-bottom: 20px; }
+        .hero-stats { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
+        .hero-stat { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 10px 20px; text-align: center; }
+        .hero-stat .num { font-size: 22px; font-weight: 800; color: #93c5fd; }
+        .hero-stat .lbl { font-size: 11px; color: #94a3b8; margin-top: 2px; }
+
+        .tech-stack-bar { margin-bottom: 16px; }
+        .tech-stack-bar .label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #64748b; margin-bottom: 6px; }
+        .tech-stack-pills { display: flex; gap: 6px; flex-wrap: wrap; }
+        .tech-pill { font-size: 12px; font-weight: 500; padding: 4px 12px; background: rgba(96,165,250,0.15); color: #93c5fd; border-radius: 6px; border: 1px solid rgba(96,165,250,0.2); }
+
+        .contact-row { font-size: 13px; color: #64748b; margin-top: 12px; }
+        .contact-row a { color: #93c5fd; text-decoration: none; }
+
+        /* Section */
+        section { padding: 40px 0; }
+        section h2 { font-size: 22px; font-weight: 700; margin-bottom: 6px; color: #1e293b; }
+        .section-sub { font-size: 13px; color: #64748b; margin-bottom: 28px; }
+
+        /* Card */
+        .card { background: white; border: 1px solid #e2e8f0; border-radius: 10px; padding: 28px; margin-bottom: 24px; transition: box-shadow 0.2s; }
+        .card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+        .card-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; flex-wrap: wrap; gap: 8px; }
+        .card-title { font-size: 18px; font-weight: 700; color: #1e293b; }
+        .tag { font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 16px; }
+        .tag-saas { background: #dbeafe; color: #1d4ed8; }
+        .tag-api { background: #fef3c7; color: #92400e; }
+        .tag-ai { background: #ede9fe; color: #6d28d9; }
+        .card-link { font-size: 13px; color: #2563eb; text-decoration: none; font-weight: 500; display: inline-block; margin-bottom: 12px; }
+
+        .card-desc { font-size: 14px; color: #475569; margin-bottom: 16px; line-height: 1.7; }
+
+        /* Architecture block */
+        .arch-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #94a3b8; margin-bottom: 8px; margin-top: 16px; }
+        .arch-flow { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px 18px; margin-bottom: 14px; font-size: 13px; color: #334155; font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace; line-height: 1.8; }
+
+        .feature-list { list-style: none; padding: 0; margin-bottom: 14px; }
+        .feature-list li { font-size: 14px; color: #334155; padding: 4px 0 4px 18px; position: relative; line-height: 1.6; }
+        .feature-list li::before { content: '▸'; position: absolute; left: 2px; color: #2563eb; font-size: 12px; }
+        .feature-list li strong { color: #1a1a1a; }
+
+        .impact-row { display: flex; gap: 12px; flex-wrap: wrap; padding-top: 14px; border-top: 1px solid #f1f5f9; }
+        .impact-item { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px 16px; text-align: center; flex: 1; min-width: 120px; }
+        .impact-item .num { font-size: 20px; font-weight: 800; color: #1e293b; }
+        .impact-item .lbl { font-size: 11px; color: #64748b; }
+
+        .tech-tags { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 14px; }
+        .tech-tag { font-size: 10px; font-weight: 600; padding: 3px 9px; background: #f1f5f9; color: #475569; border-radius: 4px; }
+
+        /* Earlier exp */
+        .earlier { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 28px; margin-bottom: 24px; }
+        .earlier h3 { font-size: 17px; font-weight: 700; margin-bottom: 16px; color: #1e293b; }
+        .exp-item { padding: 10px 0; border-bottom: 1px solid #e2e8f0; }
+        .exp-item:last-child { border-bottom: none; }
+        .exp-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 4px; }
+        .exp-role { font-size: 14px; font-weight: 700; color: #1e293b; }
+        .exp-company { color: #2563eb; }
+        .exp-date { font-size: 12px; color: #94a3b8; }
+        .exp-desc { font-size: 13px; color: #475569; margin-top: 2px; }
+
+        footer { padding: 28px 0; text-align: center; font-size: 12px; color: #94a3b8; border-top: 1px solid #e2e8f0; }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <h1>Lamont Lu</h1>
+        <div class="subtitle">Full-Stack Engineer — AI Application Developer</div>
+        <div class="hero-desc">
+            15 年軟體工程經驗，從 HTC Android 系統層到獨立開發 AI SaaS 產品。擅長前後端全端開發與 AI/LLM 整合，能一人完成從架構設計、API 開發、資料庫設計到部署上線的完整產品。
+        </div>
+        <div class="hero-stats">
+            <div class="hero-stat"><div class="num">4</div><div class="lbl">獨立上線產品</div></div>
+            <div class="hero-stat"><div class="num">15+</div><div class="lbl">年軟體工程經驗</div></div>
+            <div class="hero-stat"><div class="num">RAG</div><div class="lbl">AI 架構實戰</div></div>
+        </div>
+
+        <div class="tech-stack-bar">
+            <div class="label">Tech Stack</div>
+            <div class="tech-stack-pills">
+                <span class="tech-pill">React</span>
+                <span class="tech-pill">Next.js</span>
+                <span class="tech-pill">TypeScript</span>
+                <span class="tech-pill">Node.js</span>
+                <span class="tech-pill">Python</span>
+                <span class="tech-pill">MySQL</span>
+                <span class="tech-pill">Supabase</span>
+                <span class="tech-pill">Firebase</span>
+                <span class="tech-pill">Claude API</span>
+                <span class="tech-pill">OpenAI API</span>
+                <span class="tech-pill">Gemini API</span>
+                <span class="tech-pill">REST API</span>
+                <span class="tech-pill">WebSocket</span>
+                <span class="tech-pill">Tailwind CSS</span>
+                <span class="tech-pill">Vercel</span>
+            </div>
+        </div>
+
+        <div class="contact-row">
+            lamontlu@gmail.com &nbsp;|&nbsp;
+            <a href="https://linkedin.com/in/lamont-lu-355680132">LinkedIn</a> &nbsp;|&nbsp; Taipei, Taiwan
+        </div>
+    </div>
+</header>
+
+<section>
+<div class="container">
+
+    <h2>Projects</h2>
+    <div class="section-sub">獨立設計、開發、部署的完整產品，全部可線上體驗</div>
+
+    <!-- Project 1: Airi (STAR project) -->
+    <div class="card">
+        <div class="card-head">
+            <div class="card-title">Airi — AI 智慧客服 SaaS 平台</div>
+            <span class="tag tag-saas">SaaS 產品</span>
+        </div>
+        <a class="card-link" href="https://airi.airai.tw" target="_blank">airi.airai.tw →</a>
+        <div class="card-desc">
+            獨立開發的 AI 客服平台。企業上傳文件，系統自動建立向量知識庫，部署品牌化聊天機器人。一行 script 嵌入網站即可使用。支援多租戶、台幣訂閱計費。
+        </div>
+
+        <div class="arch-label">Architecture — RAG Pipeline</div>
+        <div class="arch-flow">
+            文件上傳（PDF/DOCX/TXT/URL）→ 文件解析 & 分段切割 → 向量嵌入（Embedding）<br>
+            → Supabase 儲存 → 使用者提問 → 語意檢索（Semantic Search）<br>
+            → Claude API 生成回覆 + 來源引用 → 串流輸出（Streaming SSE）
+        </div>
+
+        <div class="arch-label">Key Engineering</div>
+        <ul class="feature-list">
+            <li><strong>前端：</strong>Next.js + React，串流打字機效果、對話記憶、手機自適應全螢幕、品牌色自訂</li>
+            <li><strong>後端：</strong>Node.js REST API，文件處理管線、向量索引建立（30 秒內完成）、多租戶資料隔離</li>
+            <li><strong>資料庫：</strong>Supabase（Auth、Storage、向量搜尋）、Row Level Security</li>
+            <li><strong>AI 整合：</strong>Claude API with RAG，95%+ 回覆準確率，每則回覆附來源引用</li>
+            <li><strong>後台儀表板：</strong>對話分析、高頻問題偵測、訊息量統計、潛在客戶追蹤</li>
+            <li><strong>商業功能：</strong>四級訂閱方案（免費～商務版）、台幣定價、用量計費</li>
+        </ul>
+
+        <div class="impact-row">
+            <div class="impact-item"><div class="num">50%+</div><div class="lbl">客服回應時間降低</div></div>
+            <div class="impact-item"><div class="num">30s</div><div class="lbl">知識庫建立時間</div></div>
+            <div class="impact-item"><div class="num">95%+</div><div class="lbl">回覆準確率</div></div>
+        </div>
+        <div class="tech-tags">
+            <span class="tech-tag">Next.js</span>
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">TypeScript</span>
+            <span class="tech-tag">Supabase DB</span>
+            <span class="tech-tag">Supabase</span>
+            <span class="tech-tag">Claude API</span>
+            <span class="tech-tag">RAG</span>
+            <span class="tech-tag">SSE Streaming</span>
+            <span class="tech-tag">Vercel</span>
+            <span class="tech-tag">Tailwind CSS</span>
+        </div>
+    </div>
+
+    <!-- Project 2: ask101 -->
+    <div class="card">
+        <div class="card-head">
+            <div class="card-title">ask101.tw — 多模型 AI 對話引擎</div>
+            <span class="tag tag-ai">AI 產品</span>
+        </div>
+        <div class="card-desc">
+            多輪對話式 AI 產品，具備動態回覆路由、對話狀態管理與安全護欄。開發過程中評估三家 LLM Provider，以中文準確度為基準選定 Claude 作為正式環境。
+        </div>
+
+        <div class="arch-label">Key Engineering</div>
+        <ul class="feature-list">
+            <li><strong>多模型評估：</strong>建立 benchmark 流程，測試 Claude / Gemini / OpenAI 在中文語境的準確率、回應速度與成本</li>
+            <li><strong>Prompt 架構：</strong>設計 system prompt → context injection → response routing 的多層架構</li>
+            <li><strong>安全護欄：</strong>輸入過濾、輸出驗證、對話狀態追蹤，防止 prompt injection 與偏離主題</li>
+            <li><strong>對話狀態管理：</strong>多輪記憶、上下文壓縮、token 使用最佳化</li>
+        </ul>
+        <div class="tech-tags">
+            <span class="tech-tag">Next.js</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">Claude API</span>
+            <span class="tech-tag">OpenAI API</span>
+            <span class="tech-tag">Gemini API</span>
+            <span class="tech-tag">Prompt Engineering</span>
+        </div>
+    </div>
+
+    <!-- Project 3: Fleet Dispatch -->
+    <div class="card">
+        <div class="card-head">
+            <div class="card-title">智能派車與帳務系統 — LINE Bot + Google Maps</div>
+            <span class="tag tag-api">API 整合</span>
+        </div>
+        <div class="card-desc">
+            為餐飲物流公司開發的自動化派車系統。透過 LINE Flex Message 實現一鍵派單接單，整合 Google Maps Distance Matrix API 自動計算距離與運費，取代電話派車與紙本記帳。
+        </div>
+
+        <div class="arch-label">System Flow</div>
+        <div class="arch-flow">
+            訂單建立 → LINE Flex Message 推播給司機 → 一鍵接單回覆<br>
+            → Google Maps Distance Matrix 計算距離 → 自動運費計算<br>
+            → Firebase 儲存派車紀錄 → 結算報表產出
+        </div>
+
+        <ul class="feature-list">
+            <li><strong>LINE Bot：</strong>Flex Message 互動式卡片、Webhook 事件處理、Rich Menu 操作介面</li>
+            <li><strong>地圖計費：</strong>Google Maps Distance Matrix API 計算起訖距離，套用計費規則自動產生運費</li>
+            <li><strong>即時狀態：</strong>派單、接單、送達全程狀態追蹤，管理端即時可見</li>
+        </ul>
+
+        <div class="impact-row">
+            <div class="impact-item"><div class="num">95%</div><div class="lbl">派車時間提升</div></div>
+            <div class="impact-item"><div class="num">&lt;1%</div><div class="lbl">計費錯誤率</div></div>
+            <div class="impact-item"><div class="num">75%</div><div class="lbl">調度人力節省</div></div>
+        </div>
+        <div class="tech-tags">
+            <span class="tech-tag">Next.js</span>
+            <span class="tech-tag">LINE Messaging API</span>
+            <span class="tech-tag">Google Maps API</span>
+            <span class="tech-tag">Firebase</span>
+            <span class="tech-tag">Webhook</span>
+        </div>
+    </div>
+
+    <!-- Project 4: Invoice OCR -->
+    <div class="card">
+        <div class="card-head">
+            <div class="card-title">發票 OCR 萃取管線 — Microsoft AI Builder</div>
+            <span class="tag tag-api">API 整合</span>
+        </div>
+        <div class="card-desc">
+            為國際搬遷物流公司開發的發票處理自動化系統。支援多國多幣別多格式發票，OCR 辨識後自動萃取結構化資料，整合 Teams 工作流程派發。
+        </div>
+        <ul class="feature-list">
+            <li><strong>OCR 管線：</strong>Microsoft AI Builder 發票辨識 → 欄位映射 → Power Automate 資料清理 → 結構化輸出</li>
+            <li><strong>工作流程整合：</strong>辨識完成後自動推送至 Microsoft Teams，指派負責人、追蹤處理進度</li>
+        </ul>
+        <div class="tech-tags">
+            <span class="tech-tag">Power Automate</span>
+            <span class="tech-tag">Microsoft AI Builder</span>
+            <span class="tech-tag">Microsoft Dynamics 365</span>
+            <span class="tech-tag">Microsoft Teams</span>
+            <span class="tech-tag">OCR</span>
+        </div>
+    </div>
+
+    <!-- Engineering Background -->
+    <div class="earlier">
+        <h3>Engineering Background</h3>
+        <div class="exp-item">
+            <div class="exp-head">
+                <div class="exp-role">Director, Project Delivery — <span class="exp-company">CINNOX</span></div>
+                <div class="exp-date">2018 – 2024 · 5y10m</div>
+            </div>
+            <div class="exp-desc">主導全通路 SaaS 通訊平台工程交付。微服務架構、WebSocket 即時通訊、API 契約設計。組織 45→90 人，發版效率提升 250%。</div>
+        </div>
+        <div class="exp-item">
+            <div class="exp-head">
+                <div class="exp-role">軟體工程經理 — <span class="exp-company">I.X Security</span></div>
+                <div class="exp-date">2017 – 2018</div>
+            </div>
+            <div class="exp-desc">從零建立加密通訊 App 至 MVP。端到端開發，Crash-free rate 99.53%。</div>
+        </div>
+        <div class="exp-item">
+            <div class="exp-head">
+                <div class="exp-role">研發組長 — <span class="exp-company">獵豹移動</span></div>
+                <div class="exp-date">2015 – 2017</div>
+            </div>
+            <div class="exp-desc">帶 13 人團隊開發短影音 App 與 News Republic。1 個月上市，Google Play 印度新聞類 #1。</div>
+        </div>
+        <div class="exp-item">
+            <div class="exp-head">
+                <div class="exp-role">資深軟體工程師 — <span class="exp-company">HTC</span></div>
+                <div class="exp-date">2008 – 2012</div>
+            </div>
+            <div class="exp-desc">Android 系統層開發（Java/C++），旗艦機種核心平台元件。</div>
+        </div>
+        <div class="exp-item">
+            <div class="exp-head">
+                <div class="exp-role">資訊科學碩士 — <span class="exp-company">國立交通大學</span></div>
+                <div class="exp-date">2006 – 2008</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</section>
+
+<footer>
+    <div class="container">
+        Lamont Lu — Full-Stack & AI Engineer &nbsp;|&nbsp; lamontlu@gmail.com &nbsp;|&nbsp; 2026
+    </div>
+</footer>
+
+</body>
+</html>
