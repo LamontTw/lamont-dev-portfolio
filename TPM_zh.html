@@ -119,6 +119,24 @@
 
   .edu-line { font-size: 9.5pt; }
   .edu-line strong { color: #1a1a1a; }
+
+  /* Responsive — 只影響螢幕瀏覽（手機），不影響 PDF 列印（A4 固定） */
+  @media screen and (max-width: 600px) {
+    body { padding: 14pt 16pt; font-size: 11pt; }
+    .section-title { font-size: 13pt; }
+    .summary, .edu-line, li { font-size: 11pt; }
+    .exp-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2pt;
+    }
+    .exp-role { font-size: 11.5pt; }
+    .exp-meta {
+      text-align: left;
+      white-space: normal;
+      font-size: 10pt;
+    }
+  }
 </style>
 </head>
 <body>
