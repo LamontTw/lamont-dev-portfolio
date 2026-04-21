@@ -120,9 +120,25 @@
   .edu-line { font-size: 9.5pt; }
   .edu-line strong { color: #1a1a1a; }
 
-  /* Responsive — 只影響螢幕瀏覽（手機），不影響 PDF 列印（A4 固定） */
+  /* Responsive — 只影響螢幕瀏覽，不影響 PDF 列印（A4 固定） */
+  @media screen {
+    html { background: #f0f2f5; padding: 24px 0; }
+    body {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    }
+  }
+
   @media screen and (max-width: 600px) {
-    body { padding: 14pt 16pt; font-size: 11pt; }
+    html { background: white; padding: 0; }
+    body {
+      padding: 14pt 16pt;
+      font-size: 11pt;
+      max-width: 100%;
+      box-shadow: none;
+    }
     .section-title { font-size: 13pt; }
     .summary, .edu-line, li { font-size: 11pt; }
     .exp-header {
